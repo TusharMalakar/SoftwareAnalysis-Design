@@ -189,14 +189,20 @@ int main( int argc, char **argv ) {
 
     Hash.findAdjacentTime(adjacentWords);
 
-    cout << "\nEnter 'Yes' if you want to display the entire HashMap: " << endl;
-
-	cin >> choice;
-	if(choice == "Yes"|| "yes")
+    char letter;
+    cout<< "Enter 'T' to see the entire tabel: \n (or) Anything else to exit.";
+                cin >> letter;
+                switch(letter)
                 {
-                   Hash.display(adjacentWords);
+
+                case 'T' : //code
+                                Hash.display(adjacentWords);
+                                break;
+
+                default : //code
+                                cout<<"\n             **Thanks for using my HashTable**";
+                                exit(0);
                 }
 
-	return 0;
 
 }

@@ -1,31 +1,44 @@
+/*
+ *  is_prime.h
+ *  Created on: October 27, 2018
+ *  Author: Tushar Malakar
+ */
+
+
 #ifndef IS_PRIME_H
 #define IS_PRIME_H
+#include <cstddef>
 
-namespace PrimeProject {
+class prime{
 
-// Internal method to test if a positive number is prime.
-bool IsPrime(size_t n) {
-  if( n == 2 || n == 3 )
+public:
+    bool isPrime( size_t n )
+   {
+    if( n == 2 || n == 3 )
+        return true;
+
+    if( n == 1 || n % 2 == 0 )
+        return false;
+
+    for( int i = 3; i * i <= n; i += 2 )
+        if( n % i == 0 )
+            return false;
+
     return true;
+   }
 
-  if( n == 1 || n % 2 == 0 )
-    return false;
 
-  for( int i = 3; i * i <= n; i += 2 )
-    if( n % i == 0 )
-      return false;
+ //If a number is not Prime, get next Prime
 
-  return true;
-}
 
-// Internal method to return a prime number at least as large as n.
-int NextPrime(size_t n) {
-  if (n % 2 == 0)
-    ++n;
-  while (!IsPrime(n)) n += 2;
-  return n;
-}
+ int nextPrime( size_t n )
+ {
+    if( n % 2 == 0 )
+        ++n;
 
-}  // namespace PrimeProject
-
+    for( ; !isPrime( n ); n += 2 )
+        ;
+    return n;
+ }
+};
 #endif

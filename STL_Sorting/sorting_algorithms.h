@@ -252,7 +252,36 @@ void quicksort( vector<Comparable> & a, int left, int right ){
  	else // Do an insertion sort on the subarray
  	insertionSort( a, left, right );
  	}
+	
+	
 
+template <typename Comparable, typename Comparator> 
+bool VerifyOrder(const vector<Comparable> &input, Comparator less_than) 
+/**
+The	above	function	should	return	true	iff	the	input	is	in	
+sorted	order	according	to	the	Comparator.	For	example,	in	
+order	to	check	whether	a	vector	of	integers	(vector<int>	input_vector)	
+is	sorted	from	smaller	to	larger,	you	need	to	call	
+**/
+	
+VerifyOrder(input_vector, less<int>{}); 
+	
+/**
+If	you	want	to	check	whether	the	vector	is	sorted	from	larger	to
+smaller	you	need	to	call**/
+	
+VerifyOrder(input_vector, greater<int>{}); 
+	
+/**
+Note	that	in	order	to	use	less<int>{}	and	greater<int>{}	,	
+you	should	#include	<functional>.
+The	next	step	is	to	modify	the	code	of	heapsort,	
+quicksort	and	mergesort	(provided	in	the	book),
+such	that	a	Comparator	us	used.	For	example,	
+the	signature	for	quicksort	will	become:**/
+	
+	
+template <typename Comparable, typename Comparator> quicksort(vector<Comparable> &a, Comparator less_than); 
 
 };
 

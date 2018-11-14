@@ -1,9 +1,16 @@
-Created by Tushar Malakar on November 1, 2018
+FileName : README.txt
+Created on: Novemver 12, 2018
+Author: Tushar Malakar
 
-/** @file README.txt */
+1) Assignment 4 has been completed and compiled successfully.
 
-1) ---
+2)There is no bug. I used "makefile" to complete the project.
 
-2)----
+3)Type "make all" to compile the project. After it is done compiling:
 
-3)----
+
+./test_sorting_algorithms <input_type> <input_size> <comparison_type>
+ 
+
+    Try " ./test_sorting_algorithms random 20000 less"
+

@@ -338,4 +338,27 @@ template <typename Comparable >
 const Comparable medianofThree(vector<Comparable>&numList,int left,int right){ // puts the three number in order then takes one before the last number (n-1*) and returns as pivot
            int middle=(left+right)/2;
             if (numList[middle]<numList[left]){
-  
+                   swap(numList[left],numList[middle]);
+            }
+           else if(numList[right]<numList[left]){
+               swap(numList[right],numList[left]);
+           }
+           else if(numList[right]<numList[middle]){
+               swap(numList[right],numList[middle]);
+           }
+         return numList[right-1];      //after the three numbers are sorted , it takes the element before last one to swap with pivot
+      }
+
+
+
+ void GenerateRandomVector(vector<int> &a, size_t size_of_vector){
+    a.clear();
+    srand(time(0));
+    for (size_t i = 0; i < size_of_vector; ++i)
+    a.push_back(rand());
+ }
+
+};
+#endif
+
+

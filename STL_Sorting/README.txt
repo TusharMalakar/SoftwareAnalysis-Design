@@ -15,7 +15,7 @@ Author: Tushar Malakar
     Try " ./test_sorting_algorithms random 20000 less"
 
 _____________________________________________________________
-compare various sorting algorithms. You will also
+This project compares various sorting algorithms. You will also
 modify the algorithms in order for a Comparator class to be used for comparisons.
 To start you should write a small function that verifies that a collection is in sorted order:
 template <typename Comparable, typename Comparator>

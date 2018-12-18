@@ -1,9 +1,28 @@
-/*
+FileName : README.txt
+Created on: December 10, 2018
 Author: Tushar Malakar
-Class : Data Structure and Algorithm 3
-*/
-Graph Representation::
-This project will read a directed graph from a text file (input graphs as text files are provided). Below is an
+
+1) Assignment 5 has been compiled successfully.
+
+2)I used "makefile" to complete the project.
+
+3)Type "make all" to compile the project. After it is done compiling:
+  
+  Try:
+    a)  ./CreateGraphAndTest Graph1.txt AdjacencyQueries.txt
+ 
+    b)  ./FindPaths Graph2.txt 1
+
+    c) I have not implemented "Topological Sort" part.
+
+4)Type "make clean" to remove all the object files.
+
+________________________________________________________________________________________
+________________________________________________________________________________________
+
+Project::Graph Representation::>
+
+The project read a directed graph from a text file (input graphs as text files are provided). Below is an
 example:
 Graph1.txt
 5
@@ -14,7 +33,7 @@ Graph1.txt
 5 2 10.5 3 13.9
 The first line (5 in the example) specifies the number of vertices of the graph.
 Each vertex is represented by an integer from 1 to N. Each line is of the form
-<vertex> <connected vertex 1> <weight 1> <connected vertex 2> <weight 2> ‚Ä¶
+<vertex> <connected vertex 1> <weight 1> <connected vertex 2> <weight 2> Ö
 For each vertex you have a list of the adjacent vertices with positive edge weights. For instance, in
 the above example, vertex 1 is connected to vertex 2 (edge weight 0.2), to vertex 4 (edge weight
 10.1) and to vertex 5 (edge weight 0.5). Vertex 2 is connected to vertex 1 (edge weight 1.5), vertex
@@ -37,18 +56,28 @@ Then the output should be
 1 5: Connected, weight of edge is 0.5
 5 1: Not connected
 1 3: Not connected
+
 So, your program can be called for example as:
+
 ./CreateGraphAndTest Graph1.txt AdjacencyQueries.txt
-Dijkstra‚Äôs Algorithm Implementation 1 (60 points)
-Implement Dijkstra‚Äôs Algorithm, using a priority queue.
+
+Dijkstraís Algorithm Implementation::
+
+Implement Dijkstraís Algorithm, using a priority queue:
+
 Write a program that runs as follows:
+
 ./FindPaths <GRAPH_FILE> <STARTING_VERTEX>
-This program should use Dijkstra‚Äôs Algorithm to find the shortest paths from a given starting vertex to all
+
+This program should use Dijkstraís Algorithm to find the shortest paths from a given starting vertex to all
 vertices in the graph file. The program should output all paths in the form:
-Destination: Start, V1, V2, ‚Ä¶ , Destination, Total cost: X
+Destination: Start, V1, V2, Ö , Destination, Total cost: X
 You should print out the paths to every destination.
+
 For example if you run the program having as input Graph2.txt (provided) starting from vertex 1, i.e.
+
 ./FindPaths Graph2.txt 1
+
 Then the output should be
 1: 1 (Cost: 0)
 2: 1, 2 (Cost: 2.0)
@@ -60,14 +89,19 @@ Then the output should be
 Topological Sorting (30 points)
 Write a program that computes a sequence of vertices that satisfy the topological sorting sequence (i.e.
 implement the topological sorting algorithm).
+
 ./TopologicalSort <GRAPH>
-The output should be the sequence of vertices. If a cycle is detected, just print the message ‚ÄúCycle
-found‚Äù and terminate the program.
+The output should be the sequence of vertices. If a cycle is detected, just print the message ìCycle
+foundî and terminate the program.
 For instance:
+
 ./TopologicalSort Graph2.txt
 should produce the message
-‚ÄúCycle found‚Äù
+
+ìCycle foundî
+
 Since there is not vertex with indegree zero in the graph.
+
 ./TopologicalSort Graph3.txt
 should produce the sequence
 1, 2, 5, 4, 3, 7, 6.

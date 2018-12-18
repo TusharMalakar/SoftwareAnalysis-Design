@@ -3,12 +3,15 @@
  *  Created on: November 27, 2018
  *  Author: Tushar Malakar
  */
-#include "Graph.h"
-
-int main(int argc, char **argv) {
+#include "simulator.h"
+int main(int argc, const char * argv[]){
     if (argc != 3) {
-
-        cout << "Usage: " << argv[0] << " < GRAPH_FILE > < ADJACENCYQUERIES >" << endl;
-
-        return 0;
+        std::cout << "Usage: " << argv[0] << " <filename>" << " <starting vertex #>" << std::endl;
+        return 1;
+    }
+    Simulator simultor;
+    simultor.OpenFile(argv[1]);
+    simultor.CreateGraph();
+    simultor.CheckAdj(atoi(argv[2]));
+    return 0;
 }

@@ -1,18 +1,19 @@
 /*
- *  FileName: FindPaths.cpp
+ *  FileName: CreatedGraphAndTest.cpp
  *  Created on: November 27, 2018
  *  Author: Tushar Malakar
  */
-#include "Graph.h"
+#include "simulator.h"
 
-int main(int argc, char **argv) {
+int main(int argc, const char * argv[]){
     if (argc != 3) {
-
-        cout << "Usage: " << argv[0] << " <GRAPH_FILE> <STARTING_VERTEX>" << endl;
-
-        return 0;
-
+        std::cout << "Usage: " << argv[0] << " <filename>" << " <starting vertex #>" << std::endl;
+        return 1;
+    }
+    Simulator simultor;
+    simultor.OpenFile(argv[1]);
+    simultor.CreateGraph();
+    simultor.StartDijkstra1(atoi(argv[2]));
+    return 0;
 }
 
-
-}

@@ -35,9 +35,7 @@ void permutation_of_Char(const char str[], string prefix, const int n, const int
             permutation_of_Char(str, prefix + str[i], n, length - 1);
             // "length" is decreased, because we have added a new character
         }
-
     }
-
 }
 
 void print_vector(vector<string> str_vector){

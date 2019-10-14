@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <chrono>
 
+
 using namespace std;
 using namespace std::chrono;
 /**
@@ -10,6 +11,18 @@ a vector to store all possible passwords of decimal-
 numbers length 4 to 7
 */
  vector<string> Char_password;
+
+
+ string removeSpaces(string word) {
+    string newWord;
+    for (int char_ = 0; char_ < word.length(); char_++) {
+        if (word[char_] != ' ') {
+            newWord += word[char_];
+        }
+    }
+
+    return newWord;
+}
 
  // order matter in string, e.g. "01" != "10"
  //numbers of permutation = n! / (n-r)! , where n= set size and r= permutation length
@@ -25,6 +38,7 @@ void permutation_of_Char(const char str[], string prefix, const int n, const int
                     // pass word = "" + j'th char of str
                     string password = prefix + str[j];
                     //cout << endl << prefix + str[j] <<endl;
+                    password = removeSpaces(password);
                     Char_password.push_back(password);
             }
     }
@@ -55,18 +69,34 @@ vector<string> concate_with_Char_password(vector <string> new_vector){
     return Char_password;
 }
 
+int find_one(vector <string> my_vector, string str){
+    vector<string>::iterator it;
+    it = find(my_vector.begin(), my_vector.end(), str);
+    if (it != my_vector.end())
+    {
+        //cout << "Element " << str <<" found at position : " ;
+        //cout << it - my_vector.begin() + 1 << "\n" ;
+        int position = it - my_vector.begin() + 1 ;
+        return position;
+    }
+    else
+        //cout << "Element not found.\n\n";
+        return -1;
+}
+
 int main(){
 
     //base case:
-    char num[] = {'0', '1'};
-    permutation_of_Char(num, "", sizeof num, 1);
+    char num[] = {'A', 'B', 'C'};
+    permutation_of_Char(num, " ", sizeof num, 1);
     cout << "Base case : ";
     print_vector(Char_password);
 
     //inductive case:
-    permutation_of_Char(num, "", sizeof num, 2);
+    permutation_of_Char(num, " ", sizeof num, 2);
     cout << endl << "Inductive case : ";
     print_vector(Char_password);
+    cout << find_one(Char_password, "BB");
 
 
 
@@ -127,3 +157,4 @@ int main(){
 
     return 0;
 }
+

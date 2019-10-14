@@ -14,14 +14,17 @@ numbers length 4 to 7
 // The main recursive method to print all possible strings of length "length"
 void permutation_of_Char(const char str[], string prefix, const int n, const int length){
 
+    //Base case: length = 1, print the string "length" times + the remaining letter
     if (length == 1){
+            //if password length is 1 and set = {0-9},
+            //then there is only 10 possible passwords
             for (int j = 0; j < n; j++){
-
+                    //converting char to string concatenating with string
                     string password = prefix + str[j];
                     cout << endl << prefix + str[j] <<endl;
                     Char_password.push_back(password);
             }
-    }//Base case: length = 1, print the string "length" times + the remaining letter
+    }
     else{
        // One by one add all characters from "str" and recursively call for "length" equals to "length"-1
         for (int i = 0; i < n; i++){

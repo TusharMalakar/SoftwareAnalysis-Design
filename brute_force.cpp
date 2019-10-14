@@ -11,6 +11,8 @@ numbers length 4 to 7
 */
  vector<string> Char_password;
 
+// order matter in string, e.g. "01" != "10"
+ //numbers of permutation = n! / (n-r)! , where n= set size and r= permutation length  
 // The main recursive method to print all possible strings of length "length"
 void permutation_of_Char(const char str[], string prefix, const int n, const int length){
 

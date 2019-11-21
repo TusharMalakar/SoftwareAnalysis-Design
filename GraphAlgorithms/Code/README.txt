@@ -18,22 +18,24 @@ Author: Tushar Malakar
 4)Type "make clean" to remove all the object files.
 
 ________________________________________________________________________________________
+=> sparse tree to represent 2D metrix : ( row_num, colum_num, value)
 ________________________________________________________________________________________
 
 Project::Graph Representation::>
 
 The project read a directed graph from a text file (input graphs as text files are provided). Below is an
 example:
-Graph1.txt
+Graph1.txt                        # Directed Graph         
 5
-1 2 0.2 4 10.1 5 0.5
-2 1 1.5
-3 2 100.0 4 50.2
-4
-5 2 10.5 3 13.9
+1 2 0.2 4 10.1 5 0.5  //  line#1:   ( ( (from->to, weight)->(to,weight) ) -> (to, weight) )
+2 1 1.5               //  line#2:   ( from->to, weight )
+3 2 100.0 4 50.2      //  line#3:   ( ( from->to, weight )->(to,weight) )
+4                     //  line#4:   ( from )
+5 2 10.5 3 13.9       //  line#5:   ( ( from->to, weight)-> (to,weight) )
+
 The first line (5 in the example) specifies the number of vertices of the graph.
 Each vertex is represented by an integer from 1 to N. Each line is of the form
-<vertex> <connected vertex 1> <weight 1> <connected vertex 2> <weight 2> Ö
+<vertex> <connected vertex 1> <weight 1> <connected vertex 2> <weight 2> ‚Ä¶
 For each vertex you have a list of the adjacent vertices with positive edge weights. For instance, in
 the above example, vertex 1 is connected to vertex 2 (edge weight 0.2), to vertex 4 (edge weight
 10.1) and to vertex 5 (edge weight 0.5). Vertex 2 is connected to vertex 1 (edge weight 1.5), vertex
@@ -61,17 +63,17 @@ So, your program can be called for example as:
 
 ./CreateGraphAndTest Graph1.txt AdjacencyQueries.txt
 
-Dijkstraís Algorithm Implementation::
+Dijkstra‚Äôs Algorithm Implementation::
 
-Implement Dijkstraís Algorithm, using a priority queue:
+Implement Dijkstra‚Äôs Algorithm, using a priority queue:
 
 Write a program that runs as follows:
 
 ./FindPaths <GRAPH_FILE> <STARTING_VERTEX>
 
-This program should use Dijkstraís Algorithm to find the shortest paths from a given starting vertex to all
+This program should use Dijkstra‚Äôs Algorithm to find the shortest paths from a given starting vertex to all
 vertices in the graph file. The program should output all paths in the form:
-Destination: Start, V1, V2, Ö , Destination, Total cost: X
+Destination: Start, V1, V2, ‚Ä¶ , Destination, Total cost: X
 You should print out the paths to every destination.
 
 For example if you run the program having as input Graph2.txt (provided) starting from vertex 1, i.e.
@@ -91,14 +93,14 @@ Write a program that computes a sequence of vertices that satisfy the topologica
 implement the topological sorting algorithm).
 
 ./TopologicalSort <GRAPH>
-The output should be the sequence of vertices. If a cycle is detected, just print the message ìCycle
-foundî and terminate the program.
+The output should be the sequence of vertices. If a cycle is detected, just print the message ‚ÄúCycle
+found‚Äù and terminate the program.
 For instance:
 
 ./TopologicalSort Graph2.txt
 should produce the message
 
-ìCycle foundî
+‚ÄúCycle found‚Äù
 
 Since there is not vertex with indegree zero in the graph.
 
